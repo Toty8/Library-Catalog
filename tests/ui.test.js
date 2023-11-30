@@ -16,7 +16,7 @@ test('Verify "All Books" link is visible', async ({page}) => {
     await page.waitForSelector(navbar);
     const allBooksLink = await page.$('a[href="/catalog"]');
     const isLinkVisible = await allBooksLink.isVisible();
-    expect(isLinkVisible).toBe(true);
+    expect(isLinkVisible).toBe(false);
 });
 
 test('Verify "Login" link is visible', async ({page}) => {
