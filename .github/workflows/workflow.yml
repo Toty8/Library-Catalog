@@ -28,10 +28,9 @@ jobs:
         cd server &&
         npm install &&
         npm run build &&
-        npm run start:prod &
+        node server.js &
         sleep 5 &&
         curl http://localhost:3001 -I
-        - name: "Start Frontend"
     - name: "Start Frontend"
       run: |
         npm install &&
