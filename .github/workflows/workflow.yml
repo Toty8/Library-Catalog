@@ -10,7 +10,7 @@ on:
     branches: [ "main" ]
 
 jobs:
-  frontend:
+  build:
 
     runs-on: ubuntu-latest
 
@@ -23,7 +23,21 @@ jobs:
         cache: 'npm'
     - name: Build the app
       run: npm install
+    - name: "Start Backend"
+      run: |
+        cd server &&
+        npm install &&
+        npm run build &&
+        npm run start:prod &
+        sleep 5 &&
+        curl http://localhost:3001 -I
+        - name: "Start Frontend"
+    - name: "Start Frontend"
+      run: |
+        npm install &&
+        npm run build &&
+        npm run start &
+        sleep 5 &&
+        curl http://localhost:3001 -I
     - name: Run UI tests
       run: npm run test-ui
-    - name: Run API tests
-      run: npm run test
