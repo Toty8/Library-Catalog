@@ -24,7 +24,7 @@ jobs:
     - name: Build the app
       run: npm install
     - name: Install playwright
-      run: npm install -D @playwright/tes
+      run: npm install -D @playwright/test
     - name: "Start Frontend"
       run: |
         npm run start &
