@@ -25,18 +25,14 @@ jobs:
       run: npm install
     - name: "Start Frontend"
       run: |
-        npm install &&
-        npm run build &&
         npm run start &
         sleep 5 &&
         curl http://localhost:3001 -I
     - name: "Start Backend"
       run: |
         cd server &&
-        npm install &&
-        npm run build &&
         node server.js &
         sleep 5 &&
-        curl http://localhost:3001 -I
+        curl http://localhost:3030 -I
     - name: Run UI tests
       run: npm run test-ui
