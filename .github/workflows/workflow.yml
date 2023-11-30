@@ -38,3 +38,14 @@ jobs:
         curl http://localhost:3030/admin -I
     - name: Run UI tests
       run: npm run test-ui
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest  
+    
+    steps:
+    - name: Render Deploy Action
+      uses: johnbeynon/render-deploy-action@v0.0.8
+      with:
+        service-id: ${{ secrets.SERVICE_ID }}
+        api-key: ${{ secrets.RENDER_TOKEN }}
