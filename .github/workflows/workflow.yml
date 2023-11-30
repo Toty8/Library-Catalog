@@ -24,6 +24,8 @@ jobs:
     - name: Build the app
       run: npm install
     - name: Install playwright
+      run: npx playwright install
+    - name: Install playwright as DevDependency
       run: npm install -D @playwright/test
     - name: "Start Frontend"
       run: |
