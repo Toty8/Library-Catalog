@@ -24,8 +24,8 @@ jobs:
     - name: Build the app
       run: npm install
     - name: Start app
-      run: npm i -g mocha
+      run: npm run start
     - name: Run UI tests
-      run: npm test-ui
+      run: npm run test-ui
     - name: Run API tests
-      run: npm test
+      run: npm run test
