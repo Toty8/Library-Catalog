@@ -49,3 +49,18 @@ jobs:
       with:
         service-id: ${{ secrets.SERVICE_ID }}
         api-key: ${{ secrets.RENDER_TOKEN }}
+    - name: Wait 120 sec
+      run: sleep 120
+
+  deploy-frontend:
+    needs: deploy-backend
+    runs-on: ubuntu-latest  
+        
+    steps:
+    - name: Render Deploy Action
+      uses: johnbeynon/render-deploy-action@v0.0.8
+      with:
+        service-id: ${{ secrets.SERVICE_ID_FRONTEND }}
+        api-key: ${{ secrets.RENDER_TOKEN }}
+    - name: Wait 120 sec
+      run: sleep 120
