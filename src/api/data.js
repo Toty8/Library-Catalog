@@ -1,7 +1,7 @@
 import * as api from './api.js';
 
-const host = 'https://library-catalog-toty8-backend.onrender.com'
-api.settings.host = 'https://library-catalog-toty8-backend.onrender.com';
+const host = 'http://localhost:3030'
+api.settings.host = 'http://localhost:3030';
 
 export const login = api.login;
 export const register = api.register;
