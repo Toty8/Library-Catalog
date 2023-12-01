@@ -35,7 +35,7 @@ jobs:
         cd server &&
         node server.js &
         sleep 5 &&
-        curl http://localhost:3030/admin -I
+        curl https://library-catalog-toty8-backend.onrender.com -I
     - name: Run UI tests
       run: npm run test-ui
 
