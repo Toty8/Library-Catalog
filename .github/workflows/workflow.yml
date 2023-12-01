@@ -27,7 +27,7 @@ jobs:
       run: npx playwright install
     - name: "Start Frontend"
       run: |
-        npm run start &
+        npm run start-frontend &
         sleep 5 &&
         curl http://localhost:3001 -I
     - name: "Start Backend"
