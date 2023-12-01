@@ -39,7 +39,7 @@ jobs:
     - name: Run UI tests
       run: npm run test-ui
 
-  deploy:
+  deploy-backend:
     needs: build
     runs-on: ubuntu-latest  
     
